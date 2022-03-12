@@ -17,6 +17,7 @@ public class UImanager : MonoBehaviour
             LisToggle.Add(toggle);
         }
 
+
     }
     
     // Update is called once per frame
