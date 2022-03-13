@@ -15,6 +15,7 @@ public struct btnContent
 public class MeunManager : MonoBehaviour
 {
     public GameObject tempMenuBtn;
+    public GameObject tempText;
     public Transform btnTran;
     [SerializeField]
     public List<btnContent> btnList = new List<btnContent>();
@@ -43,15 +44,14 @@ public class MeunManager : MonoBehaviour
         if(contextTran.childCount!=0)
             for (int i = 0; i < contextTran.childCount; i++)
             {
-                Destroy(contextTran.GetChild(i));
+                Destroy(contextTran.GetChild(i).gameObject);
             } 
         int index = EventSystem.current.currentSelectedGameObject.transform.GetSiblingIndex();
         if (btnList[index]._textList.Count != 0)
             foreach (var item in btnList[index]._textList)
             {
-                GameObject temp = new GameObject();
-                temp.transform.parent = contextTran;
-                temp.AddComponent<Text>().text = item;
+                GameObject temp = Instantiate(tempText, contextTran);
+                temp.GetComponent<Text>().text = item;
             }
     }
 }
