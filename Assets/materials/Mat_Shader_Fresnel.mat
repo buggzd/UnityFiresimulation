@@ -23,5 +23,5 @@ Material:
     - _Cutoff: 0.5
     - _OutlineStrength: 0.59
     m_Colors:
-    - _Color: {r: 0.12641507, g: 0.79231244, b: 1, a: 1}
+    - _Color: {r: 0.012459901, g: 0.9433962, b: 0.1327484, a: 1}
   m_BuildTextureStacks: []
