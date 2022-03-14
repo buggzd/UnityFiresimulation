@@ -14,27 +14,30 @@ public class AlarmSignUI : MonoBehaviour
 
     private void Start()
     {
-        foreach (var item in GameObject.FindGameObjectsWithTag("alarm"))
-        {
-            GameObject tempSign = Instantiate(tempAlarmSign, alarmTran);
-            alarmList[item] = tempSign;
-        }
+        if (GameObject.FindGameObjectsWithTag("alarm").Length != 0)
+            foreach (var item in GameObject.FindGameObjectsWithTag("alarm"))
+            {
+                GameObject tempSign = Instantiate(tempAlarmSign, alarmTran);
+                alarmList[item] = tempSign;
+            }
     }
 
     private void Update()
     {
-        foreach (var item in alarmList)
-        {
-            if (InView(item.Key.transform.position)){
-                Vector2 vec2 = Camera.main.WorldToScreenPoint(item.Key.transform.position);
-                item.Value.SetActive(true);
-                item.Value.transform.position = vec2 + _offset;
-            }
-            else
+        if (alarmList.Count != 0)
+            foreach (var item in alarmList)
             {
-                item.Value.SetActive(false);
+                if (InView(item.Key.transform.position))
+                {
+                    Vector2 vec2 = Camera.main.WorldToScreenPoint(item.Key.transform.position);
+                    item.Value.SetActive(true);
+                    item.Value.transform.position = vec2 + _offset;
+                }
+                else
+                {
+                    item.Value.SetActive(false);
+                }
             }
-        }
     }
 
     bool InView(Vector3 pos)
