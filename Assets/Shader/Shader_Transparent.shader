@@ -1,4 +1,4 @@
-Shader "Custom/Shader_Transparent"
+﻿Shader "Custom/Shader_Transparent"
 {
     Properties
     {
@@ -7,6 +7,8 @@ Shader "Custom/Shader_Transparent"
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
         _AlphaScale ("AlphaScale", Range(0.01,1)) = 0.5
         _Speed ("Speed", Range(0.01,100)) = 1
+		_TexScale ("TexScale", Range(0.0001,1)) = 1
+		_Wavewidth ("Wavewidth", Range(0.01,10)) = 1
     }
     SubShader {
 		Tags {"Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent"}
@@ -36,6 +38,8 @@ Shader "Custom/Shader_Transparent"
 			fixed _AlphaScale;
             fixed _Speed;
 			fixed4 _HighLightColor;
+			fixed _TexScale;
+			float _Wavewidth;
 
 			struct a2v {
 				float4 vertex : POSITION;
@@ -66,17 +70,21 @@ Shader "Custom/Shader_Transparent"
 			fixed4 frag(v2f i) : SV_Target {
 				fixed3 worldNormal = normalize(i.worldNormal);
 				fixed3 worldLightDir = normalize(UnityWorldSpaceLightDir(i.worldPos));
-                i.uv*=0.5;
-				i.uv+=sin(_Time*_Speed)*0.5;
-				fixed4 texColor = tex2D(_MainTex, i.uv);
-				
+            
+				float2 texUV=(i.worldPos.y,i.worldPos.y)*_TexScale;
+				texUV-=_Time*_Speed;
+				//texUV=texUV%1;
+				fixed4 texColor = tex2D(_MainTex, texUV);
+
 				fixed3 emission = texColor.a*_HighLightColor.rgb;
 				
 				fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz ;
 				
 				fixed3 diffuse = _LightColor0.rgb  * max(0, dot(worldNormal, worldLightDir));
+
+		
 				
-				return fixed4(ambient + diffuse + emission , texColor.a * _AlphaScale);
+				return fixed4(_Color.rgb+emission , _AlphaScale);
 			}
 			
 			ENDCG
