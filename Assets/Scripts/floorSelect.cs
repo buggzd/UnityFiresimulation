@@ -57,18 +57,28 @@ public class floorSelect : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
-            resetFloor();
+         
             floorPop(((GameObject)floorHashtable[0]).transform);
         }
         if (Input.GetKeyDown(KeyCode.Keypad2))
         {
-            resetFloor();
+           
             floorPop(((GameObject)floorHashtable[1]).transform);
         }
         if (Input.GetKeyDown(KeyCode.Keypad3))
         {
-            resetFloor();
+            
             floorPop(((GameObject)floorHashtable[2]).transform);
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad4))
+        {
+
+            floorPop(((GameObject)floorHashtable[3]).transform);
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad5))
+        {
+
+            floorPop(((GameObject)floorHashtable[4]).transform);
         }
 
     }
@@ -80,6 +90,7 @@ public class floorSelect : MonoBehaviour
     }
     void floorPop(Transform floor)
     {
+        resetFloor();
         destination.y=floor.position.y;
         floor.position = destination;
         lastFloor = floor;
