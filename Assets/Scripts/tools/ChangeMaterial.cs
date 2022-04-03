@@ -12,7 +12,7 @@ public class ChangeMaterial : MonoBehaviour
     //List<GameObject>ObjList=new List<GameObject>();
     // Start is called before the first frame update
     [ContextMenu("Play")]
-    void Play()
+    public void Play()
     {
         Debug.Log("ChangeMaterial");
         Transform[] temp = transform.GetComponentsInChildren<Transform>();

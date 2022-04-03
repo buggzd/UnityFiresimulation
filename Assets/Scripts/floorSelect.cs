@@ -82,7 +82,11 @@ public class floorSelect : MonoBehaviour
         }
 
     }
-    void resetFloor()
+    public void selectFloor(int i)
+    {
+        floorPop(((GameObject)floorHashtable[i-1]).transform);
+    }
+    public void resetFloor()
     {
         Vector3 v3 = originalPos;
         v3.y=lastFloor.position.y;
