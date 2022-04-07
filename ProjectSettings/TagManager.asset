@@ -6,7 +6,8 @@ TagManager:
   tags:
   - alarm
   - floor
-  - reflectIgnore
+  - Wall
+  - Windows
   layers:
   - Default
   - TransparentFX

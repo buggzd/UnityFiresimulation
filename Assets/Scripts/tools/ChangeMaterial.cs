@@ -9,23 +9,65 @@ using UnityEngine;
 public class ChangeMaterial : MonoBehaviour
 {
     public Material material;
+
+    public string _tag = "Windows";
+    
     //List<GameObject>ObjList=new List<GameObject>();
     // Start is called before the first frame update
-    [ContextMenu("Play")]
-    public void Play()
-    {
-        Debug.Log("ChangeMaterial");
-        Transform[] temp = transform.GetComponentsInChildren<Transform>();
-        foreach (var item in temp)
-        {
 
-            if (item.GetComponent<MeshRenderer>() != null)
+    [ContextMenu("Set Material")]
+    public void SetMaterial()
+    {
+        
+            
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(_tag);
+        if(gameObjects.Length <= 0)
+        {
+            Debug.Log("there is no obj'_tag named " + _tag);
+        }
+        else
+        {
+            foreach (var item in gameObjects)
             {
-                item.GetComponent<MeshRenderer>().material = material;
-                Debug.Log(item.name);
+
+                if (item.transform.GetComponent<MeshRenderer>() != null)
+                {
+                    item.transform.GetComponent<MeshRenderer>().material = material;
+                    Debug.Log(item.name);
+                }
             }
         }
+            
+        
+
        
+    }
+    /// <summary>
+    /// 把tag为_tag的物体的所有子物体的tag都设置为_tag
+    /// </summary>
+    [ContextMenu("Set Childrens'Tag as them father")]
+    public void SetChildrenTag()
+    {
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(_tag);
+        foreach (var item in gameObjects)
+        {
+            foreach(var item2 in item.GetComponentsInChildren<Transform>())
+            {
+                SetGameObjectTag(item2,_tag);
+            }
+            
+        }
+    }
+
+    //更改trans的tag为T
+    public static void SetGameObjectTag(Transform trans, string T)
+    {
+        if (!UnityEditorInternal.InternalEditorUtility.tags.Equals(T)) //如果tag列表中没有这个tag
+        {
+            UnityEditorInternal.InternalEditorUtility.AddTag(T); //在tag列表中添加这个tag
+        }
+
+        trans.tag = T;
     }
 
 
