@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 9aabbf87e215671419f7457ea87f1957, type: 2}
+  _tag: Windows
 --- !u!4 &76142323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cfd97a5d178ca7f4a828bf8bf0410540, type: 3}
@@ -2356,7 +2357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 324809423, guid: c3c173e59913ead449b997f27ec89d78, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 324809425, guid: c3c173e59913ead449b997f27ec89d78, type: 3}
       propertyPath: m_RootOrder
@@ -6571,6 +6572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 9aabbf87e215671419f7457ea87f1957, type: 2}
+  _tag: Windows
 --- !u!4 &891665980 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cfd97a5d178ca7f4a828bf8bf0410540, type: 3}
@@ -8515,6 +8517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 9aabbf87e215671419f7457ea87f1957, type: 2}
+  _tag: Windows
 --- !u!4 &1280647712 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cfd97a5d178ca7f4a828bf8bf0410540, type: 3}
@@ -8693,6 +8696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 9aabbf87e215671419f7457ea87f1957, type: 2}
+  _tag: Windows
 --- !u!4 &1370412460 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cfd97a5d178ca7f4a828bf8bf0410540, type: 3}
@@ -10646,6 +10650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 9aabbf87e215671419f7457ea87f1957, type: 2}
+  _tag: Windows
 --- !u!4 &1544958033 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cfd97a5d178ca7f4a828bf8bf0410540, type: 3}
@@ -12503,6 +12508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 9aabbf87e215671419f7457ea87f1957, type: 2}
+  _tag: Windows
 --- !u!4 &1773189472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cfd97a5d178ca7f4a828bf8bf0410540, type: 3}

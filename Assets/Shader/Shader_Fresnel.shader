@@ -4,13 +4,35 @@ Shader "Custom/Shader_Fresnel"
     {
         _Color ("OutlineColor", Color) = (1,1,1,1)
         _OutlineStrength ("OutlineStrength", Range(0.1,5)) = 2
-        _Cutoff ("Cutoff", Range(0.1,1)) = 0.5
+        _Emiss("Emiss",Range(1,10))=1
+        _Cutoff ("Cutoff", Range(-1,1)) = 0.5
     }
     SubShader
     {
-        Cull Back
-        Tags{"Queue"="AlphaTest""RenderType"="TransparentCutOut""IgnoreProjector"="True"}
+    
+        Tags{"Queue"="Transparent"}
+        Name"preZwrite"
+        pass {
+            Cull Off
+            ZWrite On
+            ColorMask 0
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+
+            float4 _Color;
+            float4 vert(float4 v:POSITION):SV_POSITION{
+                return UnityObjectToClipPos(v);
+            }
+            float4 frag():COLOR{
+                return _Color;
+            }
+            ENDCG
+
+        }
         pass{
+            ZWrite Off
+            Blend SrcAlpha OneMinusSrcAlpha 
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -30,6 +52,7 @@ Shader "Custom/Shader_Fresnel"
             float4 _Color;
             fixed _OutlineStrength;
             fixed  _Cutoff;
+            fixed _Emiss;
 
             v2f vert(a2v i){
                 v2f o;
@@ -43,10 +66,11 @@ Shader "Custom/Shader_Fresnel"
                 
                     float3 view_Dir=normalize(_WorldSpaceCameraPos-v.pos_ws);
                     float fresnel=pow(1-saturate(dot(v.normal_ws,view_Dir)),_OutlineStrength);
-                    float4 col=_Color*fresnel;
-                    clip(col.a-_Cutoff);
+                    float3 col=_Color*fresnel*_Emiss;
+                    float alpha=saturate((fresnel-_Cutoff)*_Emiss);
+                   
 
-                    return col;
+                    return float4(col,alpha);
             }
 
             ENDCG
