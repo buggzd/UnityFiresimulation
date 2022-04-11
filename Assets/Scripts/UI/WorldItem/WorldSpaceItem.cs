@@ -20,13 +20,17 @@ public class WorldSpaceItem : MonoBehaviour
     private Slider slider;
     void Start()
     {
-        GameObject go = new GameObject();
-        go = GameObject.Find("title");
+       
+       
+        Transform root=transform;
+        Transform go;
+
+        go = root.Find("title");
         title = go.GetComponent<Text>();
-        go=GameObject.Find("content");
+        go= root.Find("content");
         content = go.GetComponent<Text>();
    
-        go = GameObject.Find("Slider");
+        go = root.Find("Slider");
         slider = go.GetComponent<Slider>();
         valueText=go.GetComponentInChildren<Text>();
 
@@ -35,7 +39,7 @@ public class WorldSpaceItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slider.value = value;
+        slider.value = value+Mathf.Sin(Time.fixedTime)*0.1f;
         title.text = title_context;
         content.text = content_context;
         valueText.text = value * MaxSize + "/" + MaxSize;

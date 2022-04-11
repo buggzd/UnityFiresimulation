@@ -21,6 +21,7 @@ public class floorSelect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         UpdateFloorList();
         if (floorList.Length == 0) {
             Debug.Log("没有找到floor，请设置tag为floor");
@@ -36,7 +37,7 @@ public class floorSelect : MonoBehaviour
         int i = 0;
         foreach(GameObject floor in floorList)
         {
-            Debug.Log(floor);
+           // Debug.Log(floor);
             floorHashtable.Add(i, floor);
             i++;
         }
