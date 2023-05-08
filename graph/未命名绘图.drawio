@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-08T14:39:52.278Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="tGyh1FJcA_TVquj6akuO" version="21.2.9" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2023-05-08T14:58:02.417Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="yG70M2_KymKBRlPLJPEr" version="21.2.9" type="github" pages="2">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1064" dy="547" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -190,7 +190,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="azFi3AKKCltQWqGifTyJ" name="第 2 页">
-    <mxGraphModel dx="1064" dy="547" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1935" dy="995" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -200,14 +200,59 @@
         <mxCell id="cCS-Mk85CjprChIzhcV4-2" value="开始" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="1">
           <mxGeometry x="310" y="30" width="100" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="cCS-Mk85CjprChIzhcV4-4" value="提问信息" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
-          <mxGeometry x="310" y="230" width="100" height="60" as="geometry" />
+        <mxCell id="cCS-Mk85CjprChIzhcV4-9" value="用户提问" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="cCS-Mk85CjprChIzhcV4-7" target="cCS-Mk85CjprChIzhcV4-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="230" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="cCS-Mk85CjprChIzhcV4-9" value="用户提问" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cCS-Mk85CjprChIzhcV4-7" target="cCS-Mk85CjprChIzhcV4-4">
+        <mxCell id="cCS-Mk85CjprChIzhcV4-7" value="客户端&amp;nbsp;" style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="300" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cCS-Mk85CjprChIzhcV4-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cCS-Mk85CjprChIzhcV4-13" target="cCS-Mk85CjprChIzhcV4-14">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="cCS-Mk85CjprChIzhcV4-7" value="客户端&amp;nbsp;" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="300" y="120" width="120" height="60" as="geometry" />
+        <mxCell id="cCS-Mk85CjprChIzhcV4-16" value="是" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="cCS-Mk85CjprChIzhcV4-15">
+          <mxGeometry x="-0.2789" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cCS-Mk85CjprChIzhcV4-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cCS-Mk85CjprChIzhcV4-13" target="cCS-Mk85CjprChIzhcV4-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cCS-Mk85CjprChIzhcV4-18" value="否" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="cCS-Mk85CjprChIzhcV4-17">
+          <mxGeometry x="0.1428" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cCS-Mk85CjprChIzhcV4-13" value="问题是否符合API" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="300" y="230" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="cCS-Mk85CjprChIzhcV4-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cCS-Mk85CjprChIzhcV4-14" target="cCS-Mk85CjprChIzhcV4-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cCS-Mk85CjprChIzhcV4-14" value="选择对应API获取数据" style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="300" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cCS-Mk85CjprChIzhcV4-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cCS-Mk85CjprChIzhcV4-19" target="cCS-Mk85CjprChIzhcV4-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cCS-Mk85CjprChIzhcV4-19" value="后端处理API请求" style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="300" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cCS-Mk85CjprChIzhcV4-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cCS-Mk85CjprChIzhcV4-21" target="cCS-Mk85CjprChIzhcV4-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cCS-Mk85CjprChIzhcV4-21" value="根据问题及后端返回数据生成回答内容" style="whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="300" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cCS-Mk85CjprChIzhcV4-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cCS-Mk85CjprChIzhcV4-23" target="cCS-Mk85CjprChIzhcV4-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cCS-Mk85CjprChIzhcV4-23" value="客户端显示回答" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="300" y="660" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cCS-Mk85CjprChIzhcV4-25" value="结束" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="320" y="750" width="80" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
